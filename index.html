@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Real Estate | Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is real estate page.">
+    <meta name="keywords" content="real estate, real estate property, flats, building">
+    <meta name="author" content="Jayesh Bhosale">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./main/css/style.css">
+</head>
+<body class="overflow-x-hidden">
+    <div class="h-[800px] header relative">
+        <nav class="bg-[rgba(0,0,0,54%)] h-full">
+            <div class="w-[85%] mx-auto flex space-x-10 xl:space-x-52 mx-sm:relative sm:relative">
+                <a href="#" class="mt-8"><img src="./main/images/logo_akarat-5.png" alt="logo"></a>
+                <ul class="mt-10 pt-2 text-white ff_barlow flex w-full justify-between self-baseline header_ul">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Choose 2</a></li>
+                    <li><a href="#">Recently added</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><button class="text-xl mx-3" id="search_btn"><i class="fa fa-search"></i></button></li>
+                    <li class="flex">
+                        <select name="lang" id="lang" class="bg-[#5559A7] pl-2 rounded-l-md">
+                            <option value="eng">ENG</option>
+                            <option value="mar">MAR</option>
+                            <option value="hin">HIN</option>
+                        </select>
+                        <button type="button" class="flex px-3 py-2 bg-[#5559A7] hover:bg-indigo-500 text-[16px] font-semibold rounded-r-md"><img src="./main/images/password.png" alt="password" class="mx-2 mt-1"> Login/Register</button>
+                    </li>
+                </ul>
+                <!-- toggle buttton -->
+                <button class="bg-[#5559A7] py-1 px-4 w-fit h-fit absolute right-0 bottom-3 rounded-md self-baseline ml-3" id="toggle_btn">
+                    <i class="fa fa-bars text-white text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Serach div -->
+            <div class="top-0 fixed w-full h-full bg-black bg-opacity-80" id="search_div">
+                <div class="mt-28 w-[30%] mx-auto">
+                    <input type="text" placeholder="Search...." class="py-2 px-3 w-[75%] tablet-min:w-[88%] focus:outline-none rounded-l-xl">
+                    <button type="submit" class="-ml-2 bg-[#5559A7] text-white px-3 py-2 h-full rounded-r-xl w-[25%] tablet-min:w-[12%]"><i class="fa fa-search text-base mr-2"></i></button>
+                </div>
+            </div>
+            <!-- Serach div end -->
+
+            <div class="top-0 fixed w-full h-full bg-black bg-opacity-80" id="toggle_menu">
+                <div class="w-[50%] sm:w-[30%] h-full bg-white absolute top-0 right-0">
+                    <span class="mt-3 mr-5 close float-right font-bold text-3xl">&times;</span>
+                    <ul class="mt-16 pt-2 text-black text-center ff_barlow w-full space-y-5">
+                        <li><a href="#" class="hover:text-[#5559A7] hover:text-lg">Home</a></li>
+                        <li><a href="#" class="hover:text-[#5559A7] hover:text-lg">About Us</a></li>
+                        <li><a href="#" class="hover:text-[#5559A7] hover:text-lg">Choose 2</a></li>
+                        <li><a href="#" class="hover:text-[#5559A7] hover:text-lg">Recently added</a></li>
+                        <li><a href="#" class="hover:text-[#5559A7] hover:text-lg">Contact Us</a></li>
+                        <li>
+                            <div class="mt-10 w-[85%] mx-auto">
+                                <input type="text" placeholder="Search...." class="py-2 px-3 w-[75%] tablet-min:w-[88%] border focus:outline-blue-300 rounded-l-xl">
+                                <button type="submit" class="-ml-2 mt-3 bg-[#5559A7] text-white px-3 py-2 h-full rounded-r-xl w-[25%] tablet-min:w-[12%]"><i class="fa fa-search text-base mr-2"></i></button>
+                            </div>
+                        </li>
+                        <li>
+                            <button type="button" class="mt-5 mx-auto flex px-3 py-2 text-white bg-[#5559A7] hover:bg-indigo-500 text-base font-semibold rounded-md"><img src="./main/images/password.png" alt="password" class="mx-2 mt-1"> Login/Register</button>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- Toggle menu end -->
+
+            <div class="w-[85%] absolute top-[50%] right-[8%] left-[7%]">
+                <div class="flex space-x-2 mb-8">
+                    <div>
+                        <button class="h-[45px] bg-red_shade px-8 text-white rounded-lg text-center text-base ff_barlow-medium" id="triangle_btn" onclick="btn_buy()">Buy</button>
+                        <div class="absolute left-8 w-0 h-0 border-l-[10px] border-l-solid border-l-transparent border-r-[10px] border-r-solid border-r-transparent border-t-[20px] border-t-solid border-t-red_shade" id="triangle_div"></div>
+                    </div>
+                    <div>
+                        <button class="h-[45px] bg-white px-8 text-black rounded-lg text-center focus:bg-red_shade focus:text-white peer text-base ff_barlow-medium" onclick="btn()">Rent</button>
+                        <div class="absolute left-32 ml-2 w-0 h-0 border-l-[10px] border-l-solid border-l-transparent border-r-[10px] border-r-solid border-r-transparent border-t-[20px] border-t-solid border-t-red_shade arrow peer-focus:block"></div>
+                    </div>
+                </div>
+                <form action="#" class="bg-white py-8 rounded-lg grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-2 lg:grid lg:grid-cols-5 lg:gap-7 px-8 br_input">
+                    <input type="text" class="header__input" placeholder="Enter Keyword..">
+                    <input type="text" class="header__input" placeholder="Property Type">
+                    <input type="text" class="header__input" placeholder="Location">
+                    <input type="text" class="header__input" placeholder="Price">
+                    <button type="submit" class="rounded-lg px-14 h-[45px] bg-red_shade text-white text-center mx-sm:col-span-2 mx-lg:col-span-2 md:px-12 text-base ff_barlow-medium">Search</button>
+                </form>
+            </div>
+        </nav>
+        <img src="./main/images/bottom-path-5.png" alt="bottom_path" class="absolute bottom_img mobile-m:top-[99%] mobile-l:top-[99%] mx-lg:top-[780px] top-[770px] w-full">
+        <button class="w-fit absolute text-[40px] text-gray-400 font-light mx-sm:left-[42%] left-[46%] mx-sm:bottom-[-5%] mx-lg:bottom-[-5%] bottom-[-3%]"><img src="./main/images/arrow-bg.png" alt="arrow" class="relative"><i class="fa fa-angle-down font-light absolute top-[30%] left-8"></i></button>
+    </div>
+    <div class="mt-36 grid grid-cols-2 mx-md:grid-cols-1 w-fit">
+        <div class="h-[800px] w-fit ml-[-200px] mx-md:ml-[-25%] mx-md:h-auto tablet:ml-[-30%]">
+            <img src="./main/images/Group_646.png" alt="" class="h-full">
+        </div>
+        <div class="mx-md:mt-5 mx-md:ml-5">
+            <p class="uppercase text-2xl text-[#A5A5A5] ff_barlow-medium w-fit">Who are we</p>
+            <h2 class="ff_barlow-medium text-[40px] max-w-lg w-fit leading-tight">We develop quality infrastructure and real estate projects since 1999</h2>
+            <hr class="mt-8 bg-red_shade w-[87px] h-2">
+            <div class="mt-9 flex">
+                <p class="text-[#767676] text-2xl ff_barlow-regular flex mr-2">Read more</p>
+                <button class="relative text-4xl text-gray-400"><img src="./main/images/Group_648.png" alt="" class="mb-5"><i class="fa fa-angle-right absolute top-1 left-5 text-2xl"></i></button>
+            </div>
+            <div class="grid grid-cols-2 mt-10">
+                <div class="flex w-fit mr-2">
+                    <p class="relative">
+                        <img src="./main/images/blob.png" alt="blob" width="87px" height="87px">
+                        <p class="absolute mt-5 mobile-m:text-2xl mobile-m:m-[1%] tablet:mt-4 mobile-l:my-4 mx-3 px-1 font-sans text-4xl mobile-l:text-2xl tablet:text-2xl text-white">89+</p>
+                    </p>
+                    <p class="text-xl self-center ml-2">Completed Project</p>
+                </div>
+                <div class="flex w-fit xl:-ml-10">
+                    <p class="relative">
+                        <img src="./main/images/blob.png" alt="blob" width="87" height="87">
+                        <p class="absolute mt-5 mobile-m:text-2xl mobile-m:m-[4%] mobile-l:my-5 mobile-l:text-2xl tablet:mt-5 mx-6 font-sans text-4xl tablet:text-2xl text-white">20</p>
+                    </p>
+                    <p class="text-xl self-center ml-2">Winning Project</p>
+                </div>
+                <div class="flex mt-10 w-fit">
+                    <p class="relative">
+                        <img src="./main/images/blob.png" alt="blob" width="87" height="87">
+                        <p class="absolute mt-5 mobile-m:text-2xl mobile-m:m-[4%] mobile-l:my-5 mobile-l:mx-5 mobile-l:text-2xl tablet:my-5 mx-6 tablet:mx-5 font-sans text-4xl tablet:text-2xl text-white">50</p>
+                    </p>
+                    <p class="text-xl self-center ml-2">On going Project</p>
+                </div>
+                <div class="flex mt-10 w-fit xl:-ml-10">
+                    <p class="relative">
+                        <img src="./main/images/blob.png" alt="blob" width="87" height="87">
+                        <p class="absolute mt-5 mobile-m:text-2xl mobile-m:m-[4%] mobile-l:my-4 mobile-l:mx-5 mobile-l:text-2xl tablet:my-4 mx-6 tablet:mx-5 font-sans text-4xl tablet:text-2xl text-white">10</p>
+                    </p>
+                    <p class="text-xl self-center ml-2">Up coming Project</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-[104px] w-[85%] mx-auto grid grid-cols-1 tablet-min:grid-cols-2">
+        <div class="mt-20 tablet-min:items-center">
+            <p class="text-[#A5A5A5] text-2xl ff_barlow-medium w-fit">WHAT WE BUILD</p>
+            <p class="text-black-shade text-[40px] ff_barlow-medium w-fit">Featured Projects</p>
+            <hr class="mt-8 bg-red_shade w-[87px] h-2">
+            <div class="flex mt-9 w-fit">
+                <p class="capitalize text-2xl text-[#767676] ff_barlow-regular">view all project</p>
+                <button class="-mt-1 ml-4 relative text-4xl text-gray-400"><img src="./main/images/Group_648.png" alt="" class="mb-5"><i class="fa fa-angle-right absolute top-1 left-5 text-2xl"></i></button>
+            </div>
+            <div class="flex mt-14 items-baseline">
+                <p class="text-black-shade ff_barlow-medium text-3xl w-fit">Lorem Ipsum</p>
+                <p class="text-2xl text-black-shade w-fit font ff_roboto-regular ml-20">Dummy Text, 123</p>
+            </div>
+            <div class="mt-8 bg-[#E8E7E7] font-sans text-3xl text-black-shade py-4 px-10 rounded-lg w-[70%]"><span class="font-bold">Area</span>: 450m2</div>
+        </div>
+        <div class="slider-div mt-10 tablet-min:mt-0 h-fit relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="579.822" viewBox="0 0 633 579.822">
+                <path id="blob_9_" data-name="blob (9)" d="M435.707-15.466c70.79,42.639,131.53,125.225,136.336,212.3,4.37,87.074-47.63,179.085-117.983,242.37-70.79,63.734-160.37,98.743-232.034,80.79S95.74,431.124,43.3,367.389C-9.135,304.1-59.824,248-60.7,191.9-61.135,135.342-11.757,78.34,41.118,35.7,93.555-7.387,149.051-35.664,216.782-48.68,284.95-61.247,365.354-58.105,435.707-15.466Z" transform="translate(60.701 55.139)" fill="#5559a7"/>
+            </svg>
+            <div class="owl-carousel slider owl-theme absolute top-0 left-3 mobile-l:relative mobile-m:relative mx-md:left-7 w-[88%] h-full">
+                <div class="slide">
+                    <img src="./main/images/round-brown-wooden-5-piece-dining-set-in-room-1571463.png" alt="" class="mx-auto relative z-0">
+                    <p class="mx-auto -mt-10 relative z-20 bg-red_shade w-[50%] rounded-lg text-center py-5 text-white font-sans font-bold text-2xl">60,000 lac</p>
+                </div>
+                <div class="slide">
+                    <img src="./main/images/round-brown-wooden-5-piece-dining-set-in-room-1571463.png" alt="" class="mx-auto relative z-0">
+                    <p class="mx-auto -mt-10 relative z-20 bg-red_shade w-[50%] rounded-lg text-center py-5 text-white font-sans font-bold text-2xl">80,000 lac</p>
+                </div>
+                <div class="slide">
+                    <img src="./main/images/round-brown-wooden-5-piece-dining-set-in-room-1571463.png" alt="" class="mx-auto relative z-0">
+                    <p class="mx-auto -mt-10 relative z-20 bg-red_shade w-[50%] rounded-lg text-center py-5 text-white font-sans font-bold text-2xl">95,000 lac</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-32 w-[85%] mx-auto">
+        <h3 class="text-[#A5A5A5] text-2xl uppercase ff_barlow-medium text-center">OUR BIGGEST AWARD</h3>
+        <h2 class="text-4xl text-black-shade text-center ff_barlow-medium">Testimonials</h2>
+        <hr class="mt-8 bg-red_shade w-[87px] h-2 mx-auto">
+        <div class="mt-10 bg-[rgba(0,0,0,3%)] rounded-lg px-10 py-14">
+           <div class="grid grid-cols-1 gap-6 md:grid-cols-3 pb-3">
+                <div class="w-fit h-fit">
+                    <img src="./main/images/Testi-1.png" alt="Testi-1" class="mx-auto">
+                    <h2 class="mt-9 text-[#757575] text-center text-2xl ff_barlow-bold">John Doe</h2>
+                    <p class="mt-5 text-xl text-black-shade opacity-70 text-center"> 
+                        “The Group was very helpful and flexible towards my needs and schedule. 
+                        They have coordinated and cooperated with me."
+                    </p>
+                </div>
+                <div class="w-fit h-fit">
+                    <img src="./main/images/Testi-2.png" alt="Testi-1" class="mx-auto">
+                    <h2 class="mt-9 text-[#757575] text-center text-2xl ff_barlow-bold">John Doe</h2>
+                    <p class="mt-5 text-xl text-black-shade opacity-70 text-center"> 
+                        “The Group was very helpful and flexible towards my needs and schedule. 
+                        They have coordinated and cooperated with me."
+                    </p>
+                </div>
+                <div class="w-fit h-fit">
+                    <img src="./main/images/Testi-3.png" alt="Testi-1" class="mx-auto">
+                    <h2 class="mt-9 text-[#757575] text-center text-2xl ff_barlow-bold">John Doe</h2>
+                    <p class="mt-5 text-xl text-black-shade opacity-70 text-center"> 
+                        “The Group was very helpful and flexible towards my needs and schedule. 
+                        They have coordinated and cooperated with me."
+                    </p>
+                </div>
+           </div>
+        </div>
+    </div>
+    <div class="mt-28 w-[85%] mx-auto">
+        <div class="flex justify-between tablet:flex-col mx-md:flex-col">
+            <div>
+                <h3 class="text-[#A5A5A5] text-2xl uppercase ff_barlow-medium tablet:text-center mx-md:text-center">Property types</h3>
+                <h2 class="text-4xl text-black-shade ff_barlow-medium tablet:text-center mx-md:text-center">Properties</h2>
+                <hr class="mt-8 bg-red_shade w-[87px] h-2 tablet:mx-auto mx-md:mx-auto">
+            </div>
+            <div class="self-center mx-sm:text-center tablet:mt-5 mx-md:mt-5 group">
+                <button class="py-3 text-xl ff_barlow-medium w-[133px] text-center rounded-lg text-white uppercase hover:bg-[#5559A7] hover:text-white bg-[#5559A7]" id="filter-active" onmouseover="hover()">All</button>
+                <button class="filter-btn" onmouseover="filter()">villa</button>
+                <button class="filter-btn" onmouseover="filter()">offices</button>
+                <button class="filter-btn" onmouseover="filter()">apartment</button>
+            </div>
+        </div>
+        <div class="mt-16 grid sm:grid-rows-2 gap-9 mx-sm:gap-0 h-fit">
+            <div class="mx-sm:grid-cols-1 xl:flex xl:justify-between xl-max:grid xl-max:grid-cols-2 xl-max:gap-3 h-fit">
+                <img src="./main/images/Property-1.png" alt="Property-1">
+                <img src="./main/images/Property-2.png" alt="Property-2" class="mx-sm:mt-10">
+            </div>
+            <div class="mx-sm:flex-col mx-sm:mt-10 xl:flex xl:justify-between xl-max:grid xl-max:grid-cols-4 xl-max:gap-3 h-fit">
+                <img src="./main/images/Property-3.png" alt="Property-3" class="mx-sm:w-full">
+                <img src="./main/images/Property-4.png" alt="Property-4" class="mx-sm:w-full mx-sm:mt-10">
+                <img src="./main/images/Property-5.png" alt="Property-5"class="mx-sm:w-full mx-sm:mt-10">
+                <img src="./main/images/Property-6.png" alt="Property-6"class="mx-sm:w-full mx-sm:mt-10">
+            </div>
+        </div>
+    </div>
+    <div class="mx-md:mt-12 videos h-[473px]">
+        <div class="grid grid-flow-row md:grid-flow-col h-full w-full relative">
+            <div class="h-full w-fit mobile-m:ml-[8%] mobile-l:ml-[10%] ml-[13%] md:ml-[15%] flex justify-center flex-col">
+                <h3 class="text-[#A5A5A5] text-2xl uppercase ff_barlow-medium w-full mx-md:text-center">Best it here</h3>
+                <h2 class="text-4xl text-black-shade ff_barlow-medium w-[170px] mx-md:text-center">Our videos</h2>
+                <hr class="mt-9 bg-red_shade w-[87px] h-2 mx-md:mx-auto">
+            </div> 
+            <div class="h-full mobile-m:w-[32%] mobile-l:w-[33%] w-[34%] mx-md:mt-10 md:w-[60%] md:justify-self-end md:absolute border">
+                <div id="slide_1" class="md:top-[15%] owl-carousel owl-theme h-fit">
+                    <div class="slide1">
+                        <img src="./main/images/slider2_img1.png" alt="">
+                    </div>
+                    <div class="slide1">
+                        <img src="./main/images/slider2_img2.png" alt="">
+                    </div>
+                    <div class="slide1">
+                        <img src="./main/images/slider2_img3.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-40 w-[85%] mx-auto mx-sm:text-center xl-max:text-center xl:flex xl:justify-between">
+        <div class="self-center w-fit mx-sm:mx-auto xl-max:mx-auto">
+            <h5 class="uppercase text-sm text-[#5559A7] font-medium font-sans w-fit mx-sm:mx-auto xl-max:mx-auto">QUICK INQUIRY</h5>
+            <h2 class="text-3xl text-black-shade font-sans font-medium w-fit mx-sm:text-center xl-max:text-center">Want more information?</h2>
+        </div>
+        <div class="grid grid-cols-2 gap-3 mobile-md:grid-cols-1 w-fit mx-sm:mt-8 mx-sm:mx-auto xl-max:mt-8 xl-max:mx-auto">
+            <input type="text" class="enquiry__input" placeholder="Your name">
+            <input type="text" class="enquiry__input" placeholder="Phone number">
+            <input type="text" class="enquiry__input" placeholder="Email id">
+            <select class="text-[#939393] w-[264px] border border-gray-300 text-sm font-sans capitalize h-[49px] rounded-lg pl-3 focus:outline-gray-400 mx-sm:w-full focus:text-black-shade">
+                <option value="project1">Project1</option>
+                <option value="project2">Project2</option>
+                <option value="project3">Project3</option>
+            </select>
+        </div>
+        <button class="bg-[#00387A] text-sm text-white font-sans py-4 w-[199px] rounded-md hover:bg-[#00397ae1] mx-sm:mt-8 xl-max:mt-8">
+            <img src="./main/images/phoneicon.png" alt="phoneicon" class="mx-auto">
+            <p class="mt-[10px] w-fit mx-auto opacity-75">Get a</p>
+            <p class="w-fit mx-auto opacity-75">Call Back</p>
+        </button>
+    </div>
+    <footer class="mt-32 pb-6 h-fit bg-black bg-opacity-90">
+        <div class="w-[85%] mx-auto grid sm:grid-cols-2 footer-minxl:grid-cols-4 border-b border-[#707070] pb-12 h-fit">
+            <div class="mt-28 h-fit mx-sm:text-center">
+                <ul class="text-white text-base font-sans leading-10">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Choose 2</a></li>
+                    <li><a href="#">Recently added</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="mt-[62px] mx-sm:text-center">
+                <h3 class="text-white text-lg uppercase font-sans">get in touch</h2>
+                <p class="mt-9 text-white text-base uppercase font-sans">phone</p>
+                <p class="mt-[18px] text-white text-2xl uppercase font-sans">+(12) 9871234344</p>
+                <p class="mt-10 text-white font-sans text-[15px] w-[60%] mx-sm:mx-auto">
+                    56, clity ford Street, Lorem
+                    G1 HUL1, New City, Ipsum
+                </p>
+            </div>
+            <div class="mx-sm:mt-16 mx-sm:text-center sm:mt-[109px]">
+                <h3 class="capitalize text-white text-base font-sans">email</h3>
+                <p class="mt-5 text-white text-2xl font-sans">contact@example.com</p>
+                <div class="mt-6 bg-[#00387A] rounded-md h-[51px] w-[60%] flex justify-around items-center mx-sm:mx-auto">
+                    <a href="#"><i class="fa fa-facebook text-base text-white"></i></a>
+                    <a href="#"><i class="fa fa-twitter text-base text-white"></i></a>
+                    <a href="#"><i class="fa fa-google-plus text-base text-white"></i></a>
+                    <a href="#"><i class="fa fa-instagram text-base text-white"></i></a>
+                    <a href="#"><i class="fa fa-linkedin text-base text-white"></i></a>
+                </div>
+            </div>
+            <div class="mt-[62px] mx-sm:text-center">
+                <h3 class="text-lg text-white font-sans">SUBSCRIBE TO NEWSLETTER</h3>
+                <form action="#" class="mt-11">
+                    <input type="email" placeholder="Enter your email address" class="w-full py-3 text-center rounded-md text-black-shade text-sm placeholder:text-[#333333] placeholder:opacity-60" required>
+                    <button type="submit" class="mt-7 bg-[#00387A] text-white py-3 px-12 rounded-md">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="mt-8 text-white text-sm font-sans text-center opacity-60">
+            © 2020 - GMTCC. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Jquery -->
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./main/js/slider.js"></script>
+
+    
+    <script>
+        var t_btn = document.getElementById('triangle_btn');
+        var t_div=document.getElementById('triangle_div');
+        var filter_active= document.getElementById('filter-active');
+
+        var search= document.getElementById('search_div');
+        var btnS= document.getElementById('search_btn');
+        
+        var toggle_btn= document.getElementById('toggle_btn');
+        var toggle_menu= document.getElementById('toggle_menu');
+        var span = document.getElementsByClassName('close')[0];
+
+        function filter(){
+            filter_active.style.backgroundColor='transparent';
+            filter_active.style.color='#444444';
+        }
+        function hover(){
+            filter_active.style.backgroundColor='#5559A7';
+            filter_active.style.color='white';
+        }
+        function btn(){
+            t_btn.style.backgroundColor='white';
+            t_btn.style.color='black';
+            t_div.style.display='none';
+        }
+        function btn_buy(){
+            t_btn.style.backgroundColor='#FF8484';
+            t_btn.style.color='white';
+            t_div.style.display='block';
+        }
+
+        btnS.onclick = function() {
+              search.style.display = "block";
+            }
+        window.onclick = function(event) {
+            if (event.target == search) {
+                search.style.display = "none";
+            }
+            else if(event.target == toggle_menu){
+                toggle_menu.style.display = "none";
+            }
+        }
+
+        toggle_btn.onclick= function(event){
+            toggle_menu.style.display = "block";
+        }
+        span.onclick = function() {
+              toggle_menu.style.display = "none";
+        }
+    </script>
+</body>
+</html>
