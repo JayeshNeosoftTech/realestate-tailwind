@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <style>
+        .slide1{
+            width: 320px !important;
+            /* margin-right: 38px; */
+        }    </style>
+</head>
+<body>
+    <div class="md:top-[15%] autoplay border" style="width:800px; border: 1px solid pink;">
+        <div class="slide1">
+            <img src="./images/slider2_img1.png" alt="slider2_img1">
+        </div>
+        <div class="slide1">
+            <img src="./images/slider2_img2.png" alt="slider2_img2">
+        </div>
+        <div class="slide1">
+            <img src="./images/slider2_img3.png" alt="slider2_img3">
+        </div>
+    </div>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        
+        <script>
+            $('.autoplay').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    Infinity: true,
+    autoplaySpeed: 5000,
+    varaibleWidth:true,
+  });
+        </script>
+</body>
+</html>

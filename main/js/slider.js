@@ -10,29 +10,100 @@ $(document).ready(function () {
       smartSpeed:1500,
       autoplayHoverPause:true
   });
-});
+  $('.autoplay').slick({
+    slidesToShow: 2.8,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    autoplaySpeed: 3000,
+    varaibleWidth:true,
 
-  $(document).ready(function () {
-    $('#slide_1').owlCarousel({
-      items: 2.8,
-      margin:38,
-      nav: false,
-      dots: false,
-      loop: true,
-      mouseDrag: true,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      responsiveClass:true,
-      responsive:{
-        300:{
-          margin: 38,
-          items:1,
-        },
-        768:{
-          items:2.8
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2.8,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2.8,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 475,
+        settings: {
+          slidesToShow: 2.8,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 376,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+          infinite: true,
         }
       }
-    });
+    ]
   });
-                  
+});
+var t_btn = document.getElementById('triangle_btn');
+var t_div=document.getElementById('triangle_div');
+var filter_active= document.getElementById('filter-active');
+
+var search= document.getElementById('search_div');
+var btnS= document.getElementById('search_btn');
+
+var toggle_btn= document.getElementById('toggle_btn');
+var toggle_menu= document.getElementById('toggle_menu');
+var span = document.getElementsByClassName('close')[0];
+
+function filter(){
+    filter_active.style.backgroundColor='transparent';
+    filter_active.style.color='#444444';
+}
+function hover(){
+    filter_active.style.backgroundColor='#5559A7';
+    filter_active.style.color='white';
+}
+function btn(){
+    t_btn.style.backgroundColor='white';
+    t_btn.style.color='black';
+    t_div.style.display='none';
+}
+function btn_buy(){
+    t_btn.style.backgroundColor='#FF8484';
+    t_btn.style.color='white';
+    t_div.style.display='block';
+}
+
+btnS.onclick = function() {
+      search.style.display = "block";
+    }
+window.onclick = function(event) {
+    if (event.target == search) {
+        search.style.display = "none";
+    }
+    else if(event.target == toggle_menu){
+        toggle_menu.style.display = "none";
+    }
+}
+
+toggle_btn.onclick= function(event){
+    toggle_menu.style.display = "block";
+}
+span.onclick = function() {
+      toggle_menu.style.display = "none";
+}
+function trigger(){
+    document.getElementById('trigger').scrollIntoView();
+}

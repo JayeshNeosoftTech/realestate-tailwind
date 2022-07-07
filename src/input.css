@@ -65,19 +65,13 @@
 .slide {
     @apply w-full h-full relative bg-cover bg-no-repeat bg-center before:absolute before:top-0 before:left-0 before:w-full before:h-fit;
 }
-
 .slide::before {
     content: "";
 }
-.slide1{
-    @apply w-full h-fit relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-fit;
-}
-
 .owl-nav button {
     border: none !important;
     outline: none !important;
 }
-
 .owl-prev, .owl-next {
     position: absolute;
     top: 42%;

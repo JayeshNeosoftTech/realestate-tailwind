@@ -9,9 +9,10 @@
     <meta name="keywords" content="real estate, real estate property, flats, building">
     <meta name="author" content="Jayesh Bhosale">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" href="./main/css/style.css">
 </head>
 <body class="overflow-x-hidden">
@@ -93,9 +94,9 @@
             </div>
         </nav>
         <img src="./main/images/bottom-path-5.png" alt="bottom_path" class="absolute bottom_img mobile-m:top-[99%] mobile-l:top-[99%] mx-lg:top-[780px] top-[770px] w-full">
-        <button class="w-fit absolute text-[40px] text-gray-400 font-light mx-sm:left-[42%] left-[46%] mx-sm:bottom-[-5%] mx-lg:bottom-[-5%] bottom-[-3%]"><img src="./main/images/arrow-bg.png" alt="arrow" class="relative"><i class="fa fa-angle-down font-light absolute top-[30%] left-8"></i></button>
+        <button class="w-fit absolute text-[40px] text-gray-400 font-light mx-sm:left-[42%] left-[46%] mx-sm:bottom-[-5%] mx-lg:bottom-[-5%] bottom-[-3%]" onclick="trigger()"><img src="./main/images/arrow-bg.png" alt="arrow" class="relative"><i class="fa fa-angle-down font-light absolute top-[30%] left-8"></i></button>
     </div>
-    <div class="mt-36 grid grid-cols-2 mx-md:grid-cols-1 w-fit">
+    <div class="mt-36 grid grid-cols-2 mx-md:grid-cols-1 w-fit" id="trigger">
         <div class="h-[800px] w-fit ml-[-200px] mx-md:ml-[-25%] mx-md:h-auto tablet:ml-[-30%]">
             <img src="./main/images/Group_646.png" alt="" class="h-full">
         </div>
@@ -235,24 +236,31 @@
             </div>
         </div>
     </div>
-    <div class="mx-md:mt-12 videos h-[473px]">
-        <div class="grid grid-flow-row md:grid-flow-col h-full w-full relative">
-            <div class="h-full w-fit mobile-m:ml-[8%] mobile-l:ml-[10%] ml-[13%] md:ml-[15%] flex justify-center flex-col">
-                <h3 class="text-[#A5A5A5] text-2xl uppercase ff_barlow-medium w-full mx-md:text-center">Best it here</h3>
-                <h2 class="text-4xl text-black-shade ff_barlow-medium w-[170px] mx-md:text-center">Our videos</h2>
-                <hr class="mt-9 bg-red_shade w-[87px] h-2 mx-md:mx-auto">
+    <div class="mx-md:mt-12 videos h-[473px] w-full">
+        <div class="grid grid-flow-row tablet-min:grid-flow-col h-full w-full relative">
+            <div class="h-full w-fit mx-auto tablet-min:ml-[100px] flex justify-center flex-col"><!-- ml-[38%] mobile-m:ml-[25%] mobile-l:ml-[32%] -->
+                <h3 class="text-[#A5A5A5] text-2xl uppercase ff_barlow-medium w-full tablet-max:text-center">Best it here</h3>
+                <h2 class="text-4xl text-black-shade ff_barlow-medium w-[170px] tablet-max:text-center">Our videos</h2>
+                <hr class="mt-9 bg-red_shade w-[87px] h-2 tablet-max:mx-auto">
             </div> 
-            <div class="h-full mobile-m:w-[32%] mobile-l:w-[33%] w-[34%] mx-md:mt-10 md:w-[60%] md:justify-self-end md:absolute border">
-                <div id="slide_1" class="md:top-[15%] owl-carousel owl-theme h-fit">
-                    <div class="slide1">
-                        <img src="./main/images/slider2_img1.png" alt="slider2_img1">
-                    </div>
-                    <div class="slide1">
-                        <img src="./main/images/slider2_img2.png" alt="slider2_img2">
-                    </div>
-                    <div class="slide1">
-                        <img src="./main/images/slider2_img3.png" alt="slider2_img3">
-                    </div>
+            <div class="tablet-min:pt-[74px] tablet-min:w-[75%] tablet-max:pt-7 w-full h-full autoplay justify-self-end overflow-hidden">
+                <div class="slide1 mr-16 h-[250px] w-[220px] mobile-m:w-[280px] mobile-m:h-[240px] tablet-min:w-[300px] tablet-min:h-[305px] mobile-l:mr-12">
+                    <img src="./main/images/slider2_img1.png" alt="slider2_img1" class="w-full h-full">
+                </div>
+                <div class="slide1 mr-16 h-[250px] w-[220px] mobile-m:w-[280px] mobile-m:h-[240px] tablet-min:w-[300px] tablet-min:h-[305px] mobile-l:mr-12 mobile-m:mr-14">
+                    <img src="./main/images/slider2_img2.png" alt="slider2_img2" class="w-full h-full">
+                </div>
+                <div class="slide1 mr-16 h-[250px] w-[220px] mobile-m:w-[280px] mobile-m:h-[240px] tablet-min:w-[300px] tablet-min:h-[305px] mobile-l:mr-12 mobile-m:mr-14">
+                    <img src="./main/images/slider2_img3.png" alt="slider2_img3" class="w-full h-full">
+                </div>
+                <div class="slide1 mr-12 h-[250px] w-[220px] mobile-m:w-[280px] mobile-m:h-[240px] tablet-min:w-[300px] tablet-min:h-[305px]">
+                    <img src="./main/images/slider2_img1.png" alt="slider2_img1" class="w-full h-full">
+                </div>
+                <div class="slide1 mr-16 h-[250px] w-[220px] mobile-m:w-[280px] mobile-m:h-[240px] tablet-min:w-[300px] tablet-min:h-[305px] mobile-l:mr-12 mobile-m:mr-14">
+                    <img src="./main/images/slider2_img2.png" alt="slider2_img2" class="w-full h-full">
+                </div>
+                <div class="slide1 mr-20 h-[250px] w-[220px] mobile-m:w-[280px] mobile-m:h-[240px] tablet-min:w-[300px] tablet-min:h-[305px] mobile-l:mr-16 mobile-m:mr-14">
+                    <img src="./main/images/slider2_img3.png" alt="slider2_img3" class="w-full h-full">
                 </div>
             </div>
         </div>
@@ -280,7 +288,7 @@
     </div>
     <footer class="mt-32 pb-6 h-fit bg-black bg-opacity-90">
         <div class="w-[85%] mx-auto grid sm:grid-cols-2 footer-minxl:grid-cols-4 border-b border-[#707070] pb-12 h-fit">
-            <div class="mt-28 h-fit mx-sm:text-center">
+            <div class="mt-28 mx-sm:mt-16 h-fit mx-sm:text-center">
                 <ul class="text-white text-base font-sans leading-10">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
@@ -326,58 +334,7 @@
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="./main/js/slider.js"></script>
-
-    
-    <script>
-        var t_btn = document.getElementById('triangle_btn');
-        var t_div=document.getElementById('triangle_div');
-        var filter_active= document.getElementById('filter-active');
-
-        var search= document.getElementById('search_div');
-        var btnS= document.getElementById('search_btn');
-        
-        var toggle_btn= document.getElementById('toggle_btn');
-        var toggle_menu= document.getElementById('toggle_menu');
-        var span = document.getElementsByClassName('close')[0];
-
-        function filter(){
-            filter_active.style.backgroundColor='transparent';
-            filter_active.style.color='#444444';
-        }
-        function hover(){
-            filter_active.style.backgroundColor='#5559A7';
-            filter_active.style.color='white';
-        }
-        function btn(){
-            t_btn.style.backgroundColor='white';
-            t_btn.style.color='black';
-            t_div.style.display='none';
-        }
-        function btn_buy(){
-            t_btn.style.backgroundColor='#FF8484';
-            t_btn.style.color='white';
-            t_div.style.display='block';
-        }
-
-        btnS.onclick = function() {
-              search.style.display = "block";
-            }
-        window.onclick = function(event) {
-            if (event.target == search) {
-                search.style.display = "none";
-            }
-            else if(event.target == toggle_menu){
-                toggle_menu.style.display = "none";
-            }
-        }
-
-        toggle_btn.onclick= function(event){
-            toggle_menu.style.display = "block";
-        }
-        span.onclick = function() {
-              toggle_menu.style.display = "none";
-        }
-    </script>
 </body>
 </html>
