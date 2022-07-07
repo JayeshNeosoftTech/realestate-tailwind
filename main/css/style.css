@@ -630,6 +630,10 @@ video {
   left: 0.75rem;
 }
 
+.z-auto {
+  z-index: auto;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -702,6 +706,10 @@ video {
   margin-top: 4rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -724,10 +732,6 @@ video {
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 
 .mt-\[104px\] {
@@ -2190,59 +2194,7 @@ footer{
   }
 }
 
-@media (orientation: portrait) {
-  .portrait\:mt-2 {
-    margin-top: 0.5rem;
-  }
-
-  .portrait\:mt-0 {
-    margin-top: 0px;
-  }
-}
-
 @media (orientation: landscape) {
-  .landscape\:my-\[20px\] {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .landscape\:my-10 {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .landscape\:mt-0 {
-    margin-top: 0px;
-  }
-
-  .landscape\:mt-2 {
-    margin-top: 0.5rem;
-  }
-
-  .landscape\:mt-5 {
-    margin-top: 1.25rem;
-  }
-
-  .landscape\:mt-3 {
-    margin-top: 0.75rem;
-  }
-
-  .landscape\:mt-\[\] {
-    margin-top: ;
-  }
-
-  .landscape\:mt-\[20px\] {
-    margin-top: 20px;
-  }
-
-  .landscape\:mb-5 {
-    margin-bottom: 1.25rem;
-  }
-
-  .landscape\:overflow-y-auto {
-    overflow-y: auto;
-  }
-
   .landscape\:overflow-y-scroll {
     overflow-y: scroll;
   }
