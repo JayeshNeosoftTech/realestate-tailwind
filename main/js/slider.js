@@ -105,5 +105,16 @@ span.onclick = function() {
       toggle_menu.style.display = "none";
 }
 function trigger(){
-    document.getElementById('trigger').scrollIntoView();
+    document.getElementById('trigger').scrollIntoView({behavior: "smooth"});
+    document.getElementById('trigger').style.transition= '1000';
 }
+$('#readM_btn').click(function() {
+  $('#read_more').slideDown("slow");
+  $('#readM_btn').css({'display' : 'none'});
+  $('#readM_btn2').css({'display' : 'block'});
+});
+$('#readM_btn2').click(function() {
+  $('#readM_btn2').css({'display' : 'none'});
+  $('#readM_btn').css({'display' : 'block'});
+  $('#read_more').toggle("slow");
+});
