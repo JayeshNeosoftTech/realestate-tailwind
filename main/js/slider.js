@@ -67,6 +67,9 @@ var toggle_btn= document.getElementById('toggle_btn');
 var toggle_menu= document.getElementById('toggle_menu');
 var span = document.getElementsByClassName('close')[0];
 
+var video_div = document.getElementById('video_div');
+var span1 = document.getElementsByClassName('close1')[0];
+
 function filter(){
     filter_active.style.backgroundColor='transparent';
     filter_active.style.color='#444444';
@@ -96,6 +99,9 @@ window.onclick = function(event) {
     else if(event.target == toggle_menu){
         toggle_menu.style.display = "none";
     }
+    else if(event.target == video_div){
+      video_div.style.display = "none";
+  }
 }
 
 toggle_btn.onclick= function(event){
@@ -104,6 +110,7 @@ toggle_btn.onclick= function(event){
 span.onclick = function() {
       toggle_menu.style.display = "none";
 }
+
 function trigger(){
     document.getElementById('trigger').scrollIntoView({behavior: "smooth"});
     document.getElementById('trigger').style.transition= '1000';
@@ -118,3 +125,10 @@ $('#readM_btn2').click(function() {
   $('#readM_btn').css({'display' : 'block'});
   $('#read_more').toggle("slow");
 });
+
+function video_btn(){
+  video_div.style.display = "block";
+}
+span1.onclick = function() {
+  video_div.style.display = "none";
+}
